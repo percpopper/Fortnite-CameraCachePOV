@@ -21,9 +21,9 @@ char __fastcall DefaultCase(char* a1, uint8* a2)
 	if (CameraSwitch)
 	{
 		v6 = a1 + 6;
-		v7 = 52i64;
+		v7 = 0x34i64;
 		v8 = (uint8*)v6 - a2;
-		v9 = -544805623;
+		v9 = 0xDF86ED09;
 		do
 		{
 			v10 = v9;
@@ -36,15 +36,15 @@ char __fastcall DefaultCase(char* a1, uint8* a2)
 	else
 	{
 		v12 = *a1;
-		v13 = 2957419;
-		v14 = *((uint64*)a1 + 1) + 52i64 - (uint64)v4;
+		v13 = 0x2D206B;
+		v14 = *((uint64*)a1 + 1) + 0x34i64 - (uint64)v4;
 		do
 		{
 			v15 = v13;
 			v13 ^= v3 ^ 0xFEDCBA98;
 			result = (v4[v14] ^ v15) - v3++;
 			*v4++ = result;
-		} while (v3 < 52);
+		} while (v3 < 0x34);
 	}
 	return result;
 }
@@ -119,7 +119,7 @@ FMinimalViewInfo* __fastcall FullDecryptViewInfo(uint8 CameraIndexMaybe)
 			break;
 		case 3:
 			v15 = (uint8*)v5 + 6;
-			v16 = 52i64;
+			v16 = 0x34i64;
 			v17 = CameraData - v15;
 			do
 			{
@@ -132,7 +132,7 @@ FMinimalViewInfo* __fastcall FullDecryptViewInfo(uint8 CameraIndexMaybe)
 			v10 = *v5;
 			v11 = 0xBF85ED58;
 			v12 = 0x34i64;
-			v13 = *((uint64*)v5 + 1) + 104i64 - (uint64)CameraData;
+			v13 = *((uint64*)v5 + 1) + 0x68i64 - (uint64)CameraData;
 			do
 			{
 				v14 = CameraData[v13] - v11;
@@ -144,7 +144,7 @@ FMinimalViewInfo* __fastcall FullDecryptViewInfo(uint8 CameraIndexMaybe)
 		case 5:
 			v6 = 0xA87E60C8;
 			v7 = (uint8*)v5 + 6 - CameraData;
-			v8 = 52i64;
+			v8 = 0x34i64;
 			do
 			{
 				v9 = v6;
@@ -164,9 +164,9 @@ FMinimalViewInfo* __fastcall FullDecryptViewInfo(uint8 CameraIndexMaybe)
 	else
 	{
 		v23 = *v5;
-		v24 = 52i64;
+		v24 = 0x34i64;
 		v25 = 0x192C1B69;
-		v26 = *((uint64*)v5 + 1) + 52i64 - (uint64)CameraData;
+		v26 = *((uint64*)v5 + 1) + 0x34i64 - (uint64)CameraData;
 		do
 		{
 			v27 = v25;
