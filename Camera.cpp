@@ -1,184 +1,190 @@
+
 char __fastcall DefaultCase(char* a1, uint8* a2)
 {
-	int v3; // esi
-	uint8* v4; // rbx
-	char* v6; // rdi
-	__int64 v7; // rcx
-	__int64 v8; // rdi
-	int v9; // edx
-	char v10; // al
+	int v2; // esi
+	uint8* v3; // rbx
+	char* v5; // rdi
+	__int64 v6; // rcx
+	__int64 v7; // rdi
+	int v8; // edx
+	char v9; // al
 	char result; // al
-	char v12; // al
-	int v13; // edx
-	__int64 v14; // r8
-	char v15; // al
+	char v11; // al
+	int v12; // edx
+	__int64 v13; // r8
+	char v14; // al
 
-	v3 = 0;
-	v4 = a2;
+	v2 = 0;
+	v3 = a2;
 
-	BYTE CameraSwitch = *(BYTE*)(BaseAddress + 0xEA7AD00);
+	BYTE GoofyCondition = *(BYTE*)(BaseAddress + 0xEA78D08);
 
-	if (CameraSwitch)
+	if (GoofyCondition)
 	{
-		v6 = a1 + 6;
-		v7 = 0x34i64;
-		v8 = (uint8*)v6 - a2;
-		v9 = 0xDF86ED09;
+		v5 = a1 + 6;
+		v6 = 52i64;
+		v7 = (uint8*)v5 - a2;
+		v8 = 0xDF8508E9;
 		do
 		{
-			v10 = v9;
-			v9 += 11;
-			result = v4[v8] ^ v10;
-			*v4++ = result;
-			--v7;
-		} while (v7);
+			v9 = v8;
+			v8 += 11;
+			result = v3[v7] ^ v9;
+			*v3++ = result;
+			--v6;
+		} while (v6);
 	}
 	else
 	{
-		v12 = *a1;
-		v13 = 0x2D206B;
-		v14 = *((uint64*)a1 + 1) + 0x34i64 - (uint64)v4;
+		v11 = *a1;
+		v12 = 0x2D5CD7;
+		v13 = *((uint64*)a1 + 1) + 52i64 - (uint64)v3;
 		do
 		{
-			v15 = v13;
-			v13 ^= v3 ^ 0xFEDCBA98;
-			result = (v4[v14] ^ v15) - v3++;
-			*v4++ = result;
-		} while (v3 < 0x34);
+			v14 = v12;
+			v12 ^= v2 ^ 0xFEDCBA98;
+			result = (v3[v13] ^ v14) - v2++;
+			*v3++ = result;
+		} while (v2 < 52);
 	}
 	return result;
 }
 
-FMinimalViewInfo* __fastcall FullDecryptViewInfo(uint8 CameraIndexMaybe)
+FMinimalViewInfo* __fastcall DecryptViewInfo(uint8 CameraIndexMaybe)
 {
-	int v2; // esi
-	__int64 v3; // r14
-	uint8* CameraData; // rbx
+	__int64 v2; // r14
+	int v3; // esi
+	uint8* v4; // rbx
 	char* v5; // rdi
-	unsigned int v6; // edx
-	__int64 v7; // rdi
-	__int64 v8; // rcx
-	char v9; // al
-	char v10; // al
-	unsigned int v11; // r8d
-	__int64 v12; // rcx
-	__int64 v13; // rdx
-	char v14; // al
-	uint8* v15; // rdi
-	__int64 v16; // rcx
-	__int64 v17; // rbx
-	uint8* v18; // rdi
-	__int64 v19; // rcx
-	__int64 v20; // rbx
-	__int64 v21; // rcx
+	char v6; // al
+	__int64 v7; // r10
+	char v8; // r9
+	int v9; // eax
+	char v10; // cl
+	int v11; // eax
+	uint8* v12; // rdi
+	__int64 v13; // r8
+	__int64 v14; // rbx
+	__int64 v15; // r8
+	__int64 v16; // rdi
+	char v17; // al
+	__int64 v18; // r9
+	int v19; // edx
+	int v20; // eax
+	int v21; // ecx
 	__int64 v22; // rdi
-	char v23; // al
-	__int64 v24; // rcx
-	int v25; // edx
+	__int64 v23; // r8
+	char v24; // al
+	char v25; // al
 	__int64 v26; // r8
-	char v27; // al
+	int v27; // edx
+	__int64 v28; // rcx
+	char v29; // al
 
-	BYTE CameraSwitch = *(BYTE*)(BaseAddress + 0xEA7AD40);
+	v2 = 0x7C0i64 * CameraIndexMaybe;
 
-	v2 = 0;
+	v3 = 0;
 
-	v3 = 0x7C0i64 * CameraIndexMaybe;
+	uint64 CameraDataPtr = *(uint64*)(BaseAddress + 0xECF2460);
 
-	uint64 CameraDataPtr = *(uint64*)(BaseAddress + 0xECF43A0);
+	uint64 v5e = *(uint64*)(BaseAddress + 0xECF2470);
 
-	CameraData = (uint8*)(CameraDataPtr + v3);
+	v4 = (uint8*)CameraDataPtr + v2;
 
-	uint64 c = *(uint64*)(BaseAddress + 0xECF43B0);
+	v5 = (char*)v5e + 72 * CameraIndexMaybe;
 
-	v5 = (char*)(c + 0x48 * CameraIndexMaybe);
+	BYTE CameraSwitch = *(BYTE*)(BaseAddress + 0xEA78D48);
 
 	if (CameraSwitch)
 	{
 		switch (CameraSwitch)
 		{
 		case 1:
-			v21 = 0x34i64;
-			v22 = (uint8*)v5 + 6 - CameraData;
+			v21 = 0xA87D8528;
+			v22 = (uint8*)v5 + 6 - v4;
+			v23 = 52i64;
 			do
 			{
-				*CameraData = __ROL1__(CameraData[v22], 4);
-				++CameraData;
-				--v21;
-			} while (v21);
+				v24 = v21;
+				v21 -= 9;
+				*v4 = v4[v22] ^ v24;
+				++v4;
+				--v23;
+			} while (v23);
 			break;
 		case 2:
-			v18 = (uint8*)v5 + 1;
-			v19 = 0x34i64;
-			v20 = CameraData - v18;
+			v17 = *v5;
+			v18 = *((uint64*)v5 + 1);
+			v19 = 0xB7F7DDF;
 			do
 			{
-				v18[v20] = *v18 + ~v18[5];
-				++v18;
-				--v19;
-			} while (v19);
+				*v4 = *(uint8*)(26 * ((v3 & 1u) + 1) - (unsigned __int64)(unsigned int)v3 + v18 + 52) - v19;
+				v20 = 16 * v3++;
+				++v4;
+				v19 ^= ~v20;
+			} while (v3 < 52);
 			break;
 		case 3:
-			v15 = (uint8*)v5 + 6;
-			v16 = 0x34i64;
-			v17 = CameraData - v15;
+			v15 = 52i64;
+			v16 = (uint8*)v5 + 6 - v4;
 			do
 			{
-				v15[v17] = *v15 ^ *(v15 - 5);
-				++v15;
-				--v16;
-			} while (v16);
+				*v4 = __ROL1__(v4[v16], 4);
+				++v4;
+				--v15;
+			} while (v15);
 			break;
 		case 4:
-			v10 = *v5;
-			v11 = 0xBF85ED58;
-			v12 = 0x34i64;
-			v13 = *((uint64*)v5 + 1) + 0x68i64 - (uint64)CameraData;
+			v12 = (uint8*)v5 + 1;
+			v13 = 52i64;
+			v14 = v4 - v12;
 			do
 			{
-				v14 = CameraData[v13] - v11;
-				v11 += 5;
-				*CameraData++ = ~v14;
-				--v12;
-			} while (v12);
+				v12[v14] = *v12 + ~v12[5];
+				++v12;
+				--v13;
+			} while (v13);
 			break;
 		case 5:
-			v6 = 0xA87E60C8;
-			v7 = (uint8*)v5 + 6 - CameraData;
-			v8 = 0x34i64;
+			v6 = *v5;
+			v7 = *((uint64*)v5 + 1);
+			v8 = 53;
 			do
 			{
-				v9 = v6;
-				v6 -= 9;
-				*CameraData = CameraData[v7] ^ v9;
-				++CameraData;
-				--v8;
-			} while (v8);
+				v9 = 52;
+				v10 = v8;
+				if (v3 % 3u != 1)
+					v9 = 104;
+				v8 += 17;
+				v11 = v3 + v9;
+				++v3;
+				*v4++ = *(uint8*)(v11 + v7) ^ v10;
+			} while (v3 < 52);
 			break;
 		default:
-			uint64 a = *(uint64*)(BaseAddress + 0xECF43A0);
-			uint64 b = *(uint64*)(BaseAddress + 0xECF43B0);
-			DefaultCase((char*)b + 0x48 * CameraIndexMaybe, (uint8*)a + v3);
+			uint64 a = *(uint64*)(BaseAddress + 0xECF2460);
+			DefaultCase(v5, (uint8*)a + v2);
 			break;
 		}
 	}
 	else
 	{
-		v23 = *v5;
-		v24 = 0x34i64;
-		v25 = 0x192C1B69;
-		v26 = *((uint64*)v5 + 1) + 0x34i64 - (uint64)CameraData;
+		v25 = *v5;
+		v26 = 52i64;
+		v27 = 0x192FFE89;
+		v28 = *((uint64*)v5 + 1) + 52i64 - (uint64)v4;
 		do
 		{
-			v27 = v25;
-			v25 += v2;
-			v2 += 16;
-			*CameraData = CameraData[v26] ^ v27;
-			++CameraData;
-			--v24;
-		} while (v24);
+			v29 = v27;
+			v27 += v3;
+			v3 += 16;
+			*v4 = v4[v28] ^ v29;
+			++v4;
+			--v26;
+		} while (v26);
 	}
 
-	uint64 L = *(uint64*)(BaseAddress + 0xECF43A0);
+	uint64 L = *(uint64*)(BaseAddress + 0xECF2460);
 
 	return reinterpret_cast<FMinimalViewInfo*>(L + v3);
 }
